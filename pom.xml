@@ -31,7 +31,7 @@
      <repository>
         <id>github</id>
         <name>PhanindraReddyP</name>
-        <url>https://maven.pkg.github.com/PhanindraReddyP/my-app</url>
+        <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
         <releases><enabled>true</enabled></releases>
         <snapshots><enabled>true</enabled></snapshots>
      </repository>
