@@ -31,9 +31,13 @@ jobs:
     
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo "Building project with maven commands"
-        mvn deploy -Dregistry=https://maven.pkg.github.com/PhanindraReddyP -Dtoken=GH_TOKEN
+        mkdir ~/.m2
+        echo "<settings><servers><server><id>github</id><username>OWNER</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+        mvn deploy -Dregistry=https://maven.pkg.github.com/PhanindraReddyP
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
