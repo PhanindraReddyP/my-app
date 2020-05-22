@@ -33,7 +33,7 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo "Building project with maven commands"
-        mvn deploy -Dregistry=https://maven.pkg.github.com/PhanindraReddyP -Dtoken=9ad240650e042f5533dd04af046d0744ef2acb76
+        mvn deploy -Dregistry=https://maven.pkg.github.com/PhanindraReddyP -Dtoken=${{ secrets.GH_TOKEN }} -Drepository=my-app
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
